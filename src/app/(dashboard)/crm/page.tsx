@@ -62,48 +62,67 @@ export default function CRMPage() {
       <Sidebar />
 
       <div className="flex-1 flex flex-col overflow-y-auto transition-all duration-300 lg:ml-64">
-        <header className="border-b bg-card px-4 py-3 flex items-center justify-between sticky top-0 z-40">
-          <div className="flex items-center gap-3">
-            <Sheet open={open} onOpenChange={setOpen}>
-              <SheetTrigger asChild className="lg:hidden">
-                <Button variant="outline" size="icon">
-                  <Menu className="h-5 w-5" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="p-0 w-64">
-                <SheetHeader className="px-4 py-2 border-b dark:border-gray-800">
-                  <SheetTitle>CRM Navigation</SheetTitle>
-                </SheetHeader>
-                <NavigationContent setOpen={setOpen} />
-              </SheetContent>
-            </Sheet>
+      <header className="border-b bg-card px-4 py-3 flex items-center justify-between sticky top-0 z-40">
+  <div className="flex items-center gap-3 flex-1">
+    {/* Mobile Sidebar */}
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild className="lg:hidden">
+        <Button variant="outline" size="icon">
+          <Menu className="h-5 w-5" />
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="left" className="p-0 w-64">
+        <SheetHeader className="px-4 py-2 border-b dark:border-gray-800">
+          <SheetTitle>Dashboard Navigation</SheetTitle>
+        </SheetHeader>
+        <NavigationContent setOpen={setOpen} />
+      </SheetContent>
+    </Sheet>
 
-            <div className="relative w-full max-w-xs">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                placeholder="Search..."
-                className="pl-10 bg-background"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-            </div>
-          </div>
+    {/* Search Bar (Full Stretch) */}
+    <div className="relative flex-1 max-w-full">
+      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+      <Input
+        placeholder="Search anything..."
+        className="pl-10 w-full bg-background border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+      />
+    </div>
+  </div>
 
-          <div className="flex items-center gap-3">
-            <Button variant="ghost" size="icon" className="relative">
-              <Bell className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 h-4 w-4 bg-destructive rounded-full text-[10px] text-white flex items-center justify-center">
-                3
-              </span>
-            </Button>
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
-            <Avatar>
-              <AvatarFallback className="bg-primary text-primary-foreground">M</AvatarFallback>
-            </Avatar>
-          </div>
-        </header>
+<div className="flex items-center gap-[1px] md:gap-[2px] ml-[1px]">
+  <Button
+    variant="ghost"
+    size="icon"
+    className="relative hover:bg-blue-50 dark:hover:bg-gray-800 transition p-[5px]"
+  >
+    <Bell className="h-4 w-4" />
+    <span className="absolute -top-1 -right-1 h-3.5 w-3.5 bg-destructive rounded-full text-[9px] text-white flex items-center justify-center">
+      3
+    </span>
+  </Button>
+
+  <Button
+    variant="ghost"
+    size="icon"
+    onClick={toggleTheme}
+    className="hover:bg-blue-50 dark:hover:bg-gray-800 transition p-[5px]"
+  >
+    {theme === "dark" ? (
+      <Sun className="h-4 w-4 text-yellow-400" />
+    ) : (
+      <Moon className="h-4 w-4 text-blue-500" />
+    )}
+  </Button>
+
+  <Avatar className="cursor-pointer hover:scale-105 transition-transform duration-200 ml-[1px]">
+    <AvatarFallback className="bg-primary text-primary-foreground text-[13px]">
+      M
+    </AvatarFallback>
+  </Avatar>
+</div>
+
+
+</header>
 
         {/* CRM Title */}
         <div className="p-4 md:p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">

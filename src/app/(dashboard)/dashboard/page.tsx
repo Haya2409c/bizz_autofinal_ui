@@ -82,27 +82,39 @@ const Dashboard = () => {
     </div>
   </div>
 
-  {/* Right Icons */}
-  <div className="flex items-center gap-2 sm:gap-1 ml-3">
-    <Button variant="ghost" size="icon" className="relative hover:bg-blue-50 dark:hover:bg-gray-800 transition">
-      <Bell className="h-5 w-5" />
-      <span className="absolute -top-1 -right-1 h-4 w-4 bg-destructive rounded-full text-[10px] text-white flex items-center justify-center">
-        3
-      </span>
-    </Button>
+<div className="flex items-center gap-[1px] md:gap-[2px] ml-[1px]">
+  <Button
+    variant="ghost"
+    size="icon"
+    className="relative hover:bg-blue-50 dark:hover:bg-gray-800 transition p-[5px]"
+  >
+    <Bell className="h-4 w-4" />
+    <span className="absolute -top-1 -right-1 h-3.5 w-3.5 bg-destructive rounded-full text-[9px] text-white flex items-center justify-center">
+      3
+    </span>
+  </Button>
 
-    <Button variant="ghost" size="icon" onClick={toggleTheme} className="hover:bg-blue-50 dark:hover:bg-gray-800 transition">
-      {theme === "dark" ? (
-        <Sun className="h-5 w-5 text-yellow-400" />
-      ) : (
-        <Moon className="h-5 w-5 text-blue-500" />
-      )}
-    </Button>
+  <Button
+    variant="ghost"
+    size="icon"
+    onClick={toggleTheme}
+    className="hover:bg-blue-50 dark:hover:bg-gray-800 transition p-[5px]"
+  >
+    {theme === "dark" ? (
+      <Sun className="h-4 w-4 text-yellow-400" />
+    ) : (
+      <Moon className="h-4 w-4 text-blue-500" />
+    )}
+  </Button>
 
-    <Avatar className="cursor-pointer hover:scale-105 transition-transform duration-200">
-      <AvatarFallback className="bg-primary text-primary-foreground">M</AvatarFallback>
-    </Avatar>
-  </div>
+  <Avatar className="cursor-pointer hover:scale-105 transition-transform duration-200 ml-[1px]">
+    <AvatarFallback className="bg-primary text-primary-foreground text-[13px]">
+      M
+    </AvatarFallback>
+  </Avatar>
+</div>
+
+
 </header>
 
         <main className="flex-1 p-4 md:p-6 overflow-y-auto">
