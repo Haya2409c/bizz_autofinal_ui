@@ -52,7 +52,8 @@ export default function InvoicesPage() {
     <div className="flex min-h-screen bg-background overflow-hidden">
       <Sidebar />
 
-      <div className="flex-1 flex flex-col overflow-y-auto transition-all duration-300 lg:ml-64">
+
+      <div className="flex-1 flex flex-col transition-all duration-300 lg:ml-64">
       <header className="border-b bg-card px-4 py-3 flex items-center justify-between sticky top-0 z-40">
   <div className="flex items-center gap-3 flex-1">
     {/* Mobile Sidebar */}
@@ -70,7 +71,7 @@ export default function InvoicesPage() {
       </SheetContent>
     </Sheet>
 
-    {/* Search Bar*/}
+    {/* Search Bar (Full Stretch) */}
     <div className="relative flex-1 max-w-full">
       <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
       <Input
@@ -80,27 +81,39 @@ export default function InvoicesPage() {
     </div>
   </div>
 
-  {/* Right Icons */}
-  <div className="flex items-center gap-2 sm:gap-1 ml-3">
-    <Button variant="ghost" size="icon" className="relative hover:bg-blue-50 dark:hover:bg-gray-800 transition">
-      <Bell className="h-5 w-5" />
-      <span className="absolute -top-1 -right-1 h-4 w-4 bg-destructive rounded-full text-[10px] text-white flex items-center justify-center">
-        3
-      </span>
-    </Button>
+<div className="flex items-center gap-[0px] sm:gap-[1px] md:gap-[2px] ml-[1px]">
+  <Button
+    variant="ghost"
+    size="icon"
+    className="relative hover:bg-blue-50 dark:hover:bg-gray-800 transition p-[5px]"
+  >
+    <Bell className="h-4 w-4" />
+    <span className="absolute -top-1 -right-1 h-3.5 w-3.5 bg-destructive rounded-full text-[9px] text-white flex items-center justify-center">
+      3
+    </span>
+  </Button>
 
-    <Button variant="ghost" size="icon" onClick={toggleTheme} className="hover:bg-blue-50 dark:hover:bg-gray-800 transition">
-      {theme === "dark" ? (
-        <Sun className="h-5 w-5 text-yellow-400" />
-      ) : (
-        <Moon className="h-5 w-5 text-blue-500" />
-      )}
-    </Button>
+  <Button
+    variant="ghost"
+    size="icon"
+    onClick={toggleTheme}
+    className="hover:bg-blue-50 dark:hover:bg-gray-800 transition p-[5px]"
+  >
+    {theme === "dark" ? (
+      <Sun className="h-4 w-4 text-yellow-400" />
+    ) : (
+      <Moon className="h-4 w-4 text-blue-500" />
+    )}
+  </Button>
 
-    <Avatar className="cursor-pointer hover:scale-105 transition-transform duration-200">
-      <AvatarFallback className="bg-primary text-primary-foreground">M</AvatarFallback>
-    </Avatar>
-  </div>
+  <Avatar className="cursor-pointer hover:scale-105 transition-transform duration-200 ml-[1px]">
+    <AvatarFallback className="bg-primary text-primary-foreground text-[13px]">
+      M
+    </AvatarFallback>
+  </Avatar>
+</div>
+
+
 </header>
 
         {/* Invoices Header */}

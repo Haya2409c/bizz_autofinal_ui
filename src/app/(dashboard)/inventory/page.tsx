@@ -70,7 +70,8 @@ export default function InventoryPage() {
   </div>
 
   {/* Right Icons */}
-  <div className="flex items-center gap-2 sm:gap-1 ml-3">
+  <div className="flex items-center gap-[0px] sm:gap-[1px] md:gap-[2px] ml-[1px]">
+
     <Button variant="ghost" size="icon" className="relative hover:bg-blue-50 dark:hover:bg-gray-800 transition">
       <Bell className="h-5 w-5" />
       <span className="absolute -top-1 -right-1 h-4 w-4 bg-destructive rounded-full text-[10px] text-white flex items-center justify-center">

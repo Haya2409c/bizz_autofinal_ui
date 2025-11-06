@@ -289,60 +289,111 @@ const Features = () => {
         );
       })}
 
-      {/* Additional Features Grid */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <Badge variant="default" className="mb-4">
-              And More
-            </Badge>
-            <h2 className="text-4xl font-bold mb-4">Everything Else You Need</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Additional features to make your business run smoothly and securely
-            </p>
-          </div>
+{/* Additional Features Grid */}
+<section className="py-24 px-6 bg-gradient-to-b from-muted/30 via-background to-muted/30 dark:from-[#0d1b2a] dark:via-[#1b263b] dark:to-[#0d1b2a] transition-colors duration-500">
+  <div className="container mx-auto">
+    {/* Section Header */}
+    <div className="text-center mb-16">
+      <Badge variant="default" className="mb-4 px-4 py-1 text-sm font-semibold">
+        And More
+      </Badge>
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        Everything Else You Need
+      </h2>
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Additional tools designed to make your business run smoothly and securely — 
+        from smart notifications to enterprise-level data protection.
+      </p>
+    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {additionalFeatures.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div 
-                  key={index}
-                  className="bg-card border border-border rounded-2xl p-6 hover:shadow-lg transition-shadow"
-                >
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+    {/* Feature Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+      {additionalFeatures.map((feature, index) => {
+        const Icon = feature.icon;
+        return (
+          <div
+            key={index}
+            className="
+              group relative bg-card/70 backdrop-blur-sm border border-border rounded-2xl 
+              p-8 text-center shadow-md hover:shadow-2xl 
+              hover:-translate-y-2 transition-all duration-300
+              dark:hover:shadow-blue-900/30
+            "
+          >
+            {/* Glow Accent */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300"></div>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="bg-gradient-primary rounded-3xl p-12 text-center">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Join hundreds of businesses already using AutoBiz to streamline their operations
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-lg">
-                Start Free Trial
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg bg-white/10 border-white/20 text-white hover:bg-white/20">
-                Schedule Demo
-              </Button>
+            {/* Icon */}
+            <div className="relative w-14 h-14 mx-auto mb-6 bg-primary/10 dark:bg-primary/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <Icon className="w-7 h-7 text-primary" />
             </div>
+
+            {/* Title */}
+            <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
+              {feature.title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {feature.description}
+            </p>
           </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+
+{/* CTA Section */}
+<section className="py-20 px-4">
+  <div className="container mx-auto">
+    <div
+      className="
+        rounded-3xl p-12 text-center
+        bg-gradient-to-r from-blue-600 to-indigo-600
+        dark:from-blue-700 dark:to-indigo-800
+        text-white shadow-2xl transition-colors
+      "
+    >
+      <h2 className="text-4xl font-bold mb-4">
+        Ready to Transform Your Business?
+      </h2>
+      <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Join hundreds of businesses already using AutoBiz to streamline their operations
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {/* Start Free Trial */}
+        <Button
+          size="lg"
+          variant="secondary"
+          className="
+            text-lg font-semibold
+            bg-white text-blue-700 hover:bg-gray-100
+            dark:bg-gray-100 dark:text-blue-800 dark:hover:bg-white
+          "
+        >
+          Start Free Trial
+        </Button>
+
+        {/* Schedule Demo */}
+        <Button
+          size="lg"
+          className="
+            text-lg font-semibold
+            bg-transparent border-2 border-white text-white
+            hover:bg-white hover:text-blue-700
+            dark:bg-white dark:text-blue-800 dark:hover:bg-gray-100
+            transition-colors
+          "
+        >
+          Schedule Demo
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
       <Footer />
     </div>

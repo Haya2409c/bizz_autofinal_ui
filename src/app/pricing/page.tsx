@@ -7,6 +7,8 @@ import Header from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
 
+
+
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
 
@@ -33,31 +35,33 @@ const Pricing = () => {
       cta: "Start Free Trial",
       popular: false,
     },
-    {
-      name: "Professional",
-      description: "Ideal for growing businesses with advanced needs",
-      monthlyPrice: 19999,
-      annualPrice: 15999,
-      features: [
-        { text: "Up to 500 clients", included: true },
-        { text: "Unlimited invoices", included: true },
-        { text: "Advanced inventory control", included: true },
-        { text: "WhatsApp automation", included: true },
-        { text: "Priority support", included: true },
-        { text: "5 user accounts", included: true },
-        { text: "Mobile app access", included: true },
-        { text: "Advanced analytics", included: true },
-        { text: "Custom reports", included: true },
-        { text: "AI assistant", included: true },
-        { text: "Low stock alerts", included: true },
-        { text: "Payment reminders", included: true },
-        { text: "API access", included: true },
-        { text: "White-label options", included: false },
-        { text: "Dedicated support manager", included: false },
-      ],
+  {
+  name: "Professional",
+  description: "Ideal for growing businesses with advanced needs",
+  monthlyPrice: 19999,
+  annualPrice: 15999,
+  features: [
+    { text: "Up to 500 clients", included: true },
+    { text: "Unlimited invoices", included: true },
+    { text: "Advanced inventory control", included: true },
+    { text: "WhatsApp automation", included: true },
+    { text: "Priority support", included: true },
+    { text: "5 user accounts", included: true },
+    { text: "Mobile app access", included: true },
+    { text: "Advanced analytics", included: true },
+    { text: "Custom reports", included: true },
+    { text: "AI assistant", included: true },
+    { text: "Low stock alerts", included: true },
+    { text: "Payment reminders", included: true },
+    { text: "API access", included: true },
+    { text: "White-label options", included: false },
+    { text: "Dedicated support manager", included: false },
+  ],
       cta: "Start Free Trial",
-      popular: true,
-    },
+      popular: false,
+
+}
+,
     {
       name: "Enterprise",
       description: "Complete solution for large-scale operations",
@@ -301,20 +305,51 @@ const Pricing = () => {
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-5xl">
-            <div className="bg-gradient-cta rounded-3xl p-12 text-center text-white">
-              <h2 className="text-4xl font-bold mb-4">Still have questions?</h2>
-              <p className="text-xl mb-8 opacity-90">
-                Our team is here to help you choose the right plan for your business
-              </p>
-              <Button size="lg" variant="secondary">
-                Contact Us
-              </Button>
-            </div>
-          </div>
-        </section>
+
+
+    <section className="py-20 px-4">
+      <div className="container mx-auto max-w-5xl">
+        <div
+          className="
+            rounded-3xl p-12 text-center 
+            bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-500 
+            dark:from-indigo-700 dark:via-purple-600 dark:to-pink-600 
+            text-white shadow-2xl transition-colors
+          "
+        >
+          <h2 className="text-4xl font-bold mb-4">Still have questions?</h2>
+          <p className="text-xl mb-10 text-white/90 max-w-2xl mx-auto">
+            Our team is here to help you choose the right plan for your business
+          </p>
+
+          {/* Contact Us Button */}
+<Button
+  size="lg"
+  className="
+    relative px-8 py-3 text-lg font-semibold rounded-full overflow-hidden
+    bg-white text-indigo-600 dark:bg-gray-100 dark:text-indigo-700
+    hover:text-white transition-all duration-300 group border border-white/40 shadow-lg
+  "
+>
+  <span
+    className="
+      absolute inset-0 
+      bg-gradient-to-r from-blue-500 via-indigo-400 to-purple-400 
+      dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400
+      opacity-0 group-hover:opacity-100 
+      transition-all duration-300
+    "
+  ></span>
+  <span className="relative z-10"><a href = "/contact"> Contact Us</a></span>
+</Button>
+
+        </div>
+      </div>
+    </section>
+  
+
+
+
       </main>
       <Footer />
     </div>

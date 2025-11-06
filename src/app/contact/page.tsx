@@ -32,9 +32,10 @@ const Contact = () => {
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Let's Start a{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Conversation
-            </span>
+<span className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-700 bg-clip-text text-transparent">
+  Conversation
+</span>
+
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Have questions? We'd love to hear from you. Our team is here to help you transform

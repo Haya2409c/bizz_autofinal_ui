@@ -192,3 +192,18 @@
 }
 
 
+/* Move the built-in password eye icon to the far right corner */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: block;
+  position: absolute;
+  right: 8px; /* distance from right edge */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Hide unwanted padding caused by default icon in some browsers */
+input[type="password"] {
+  padding-right: 2.5rem !important;
+  position: relative;
+}

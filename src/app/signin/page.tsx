@@ -1,7 +1,7 @@
 "use client";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -10,7 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Eye, EyeOff } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
-const SignIn = () => {
+export default function SignIn() {
   const router = useRouter();
 
   const [formData, setFormData] = useState({
@@ -20,7 +20,7 @@ const SignIn = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [showPass, setShowPass] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,7 +65,7 @@ const SignIn = () => {
 
   return (
     <AuthCard
-      title="AutoBiz"
+      title="BizzAuto"
       description="AI-Powered Business Automation Platform"
     >
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -79,21 +79,19 @@ const SignIn = () => {
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           />
         </div>
+<div className="relative">
+  <input
+    type={showPassword ? "text" : "password"}
+    id="password"
+    placeholder="Enter your password"
+    value={formData.password}
+    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+    className="w-full h-11 px-3 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+  />
 
-     {/* PASSWORD */}
-        <div className="space-y-1">
-          <Label htmlFor="password" className="text-sm font-medium">
-            Password
-          </Label>
-          <Input
-            id="password"
-            type="password"
-            placeholder="••••••••"
-            value={formData.password}
-            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-            className="h-11 bg-gray-100 border border-gray-200 focus:bg-white"
-          />
-        </div>
+</div>
+
+
 
         {/* Remember Me */}
         <div className="flex items-center space-x-2">
@@ -134,6 +132,4 @@ const SignIn = () => {
       </form>
     </AuthCard>
   );
-};
-
-export default SignIn;
+}

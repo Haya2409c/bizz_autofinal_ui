@@ -82,7 +82,8 @@ const Dashboard = () => {
     </div>
   </div>
 
-<div className="flex items-center gap-[1px] md:gap-[2px] ml-[1px]">
+<div className="flex items-center gap-[0px] sm:gap-[1px] md:gap-[2px] ml-[1px]">
+
   <Button
     variant="ghost"
     size="icon"

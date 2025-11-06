@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { Eye, EyeOff } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,7 +17,7 @@ import {
 } from "@/components/ui/select";
 import AuthCard from "@/components/AuthCard";
 
-const SignUp = () => {
+export default function SignUpPage() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     fullName: "",
@@ -24,6 +25,8 @@ const SignUp = () => {
     password: "",
     role: "",
   });
+
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,10 +52,7 @@ const SignUp = () => {
   };
 
   return (
-    <AuthCard
-      title="BizzAuto"
-      description="Create your business account"
-    >
+    <AuthCard title="BizzAuto" description="Create your business account">
       <form onSubmit={handleSubmit} className="space-y-5 mt-2">
 
         {/* FULL NAME */}
@@ -64,7 +64,9 @@ const SignUp = () => {
             id="fullName"
             placeholder="Ahmed Khan"
             value={formData.fullName}
-            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, fullName: e.target.value })
+            }
             className="h-11 bg-gray-100 border border-gray-200 focus:bg-white"
           />
         </div>
@@ -79,7 +81,9 @@ const SignUp = () => {
             type="email"
             placeholder="ahmed@company.com"
             value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             className="h-11 bg-gray-100 border border-gray-200 focus:bg-white"
           />
         </div>
@@ -89,14 +93,20 @@ const SignUp = () => {
           <Label htmlFor="password" className="text-sm font-medium">
             Password
           </Label>
-          <Input
-            id="password"
-            type="password"
-            placeholder="••••••••"
-            value={formData.password}
-            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-            className="h-11 bg-gray-100 border border-gray-200 focus:bg-white"
-          />
+          <div className="relative">
+            <Input
+              id="password"
+              type={showPassword ? "text" : "password"}
+              placeholder="••••••••"
+              value={formData.password}
+              onChange={(e) =>
+                setFormData({ ...formData, password: e.target.value })
+              }
+              className="h-11 bg-gray-100 border border-gray-200 focus:bg-white pr-12"
+            />
+
+         
+          </div>
         </div>
 
         {/* ROLE */}
@@ -106,9 +116,14 @@ const SignUp = () => {
           </Label>
           <Select
             value={formData.role}
-            onValueChange={(value) => setFormData({ ...formData, role: value })}
+            onValueChange={(value) =>
+              setFormData({ ...formData, role: value })
+            }
           >
-            <SelectTrigger id="role" className="h-11 bg-gray-100 border border-gray-200 focus:bg-white">
+            <SelectTrigger
+              id="role"
+              className="h-11 bg-gray-100 border border-gray-200 focus:bg-white"
+            >
               <SelectValue placeholder="Select your role" />
             </SelectTrigger>
             <SelectContent>
@@ -118,7 +133,7 @@ const SignUp = () => {
           </Select>
         </div>
 
-        {/* SUBMIT */}
+        {/* SUBMIT BUTTON */}
         <Button
           type="submit"
           className="w-full h-11 text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-md"
@@ -140,6 +155,4 @@ const SignUp = () => {
       </form>
     </AuthCard>
   );
-};
-
-export default SignUp;
+}

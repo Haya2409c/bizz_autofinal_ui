@@ -79,7 +79,7 @@ export default function CRMPage() {
       </SheetContent>
     </Sheet>
 
-    {/* Search Bar (Full Stretch) */}
+  {/* Search Bar (Full Stretch) */}
     <div className="relative flex-1 max-w-full">
       <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
       <Input
@@ -89,7 +89,8 @@ export default function CRMPage() {
     </div>
   </div>
 
-<div className="flex items-center gap-[1px] md:gap-[2px] ml-[1px]">
+<div className="flex items-center gap-[0px] sm:gap-[1px] md:gap-[2px] ml-[1px]">
+
   <Button
     variant="ghost"
     size="icon"
