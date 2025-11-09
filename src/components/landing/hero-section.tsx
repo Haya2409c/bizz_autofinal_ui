@@ -7,8 +7,10 @@ import {
   Power,
   Zap,
   TrendingUp,
+  MessageSquare,
+  FileText,
 } from "lucide-react";
-import dashboardImg from "@/assets/dashboard-hero.png"; // <-- add your image here
+import dashboardImg from "@/assets/dashboard-hero.png";
 
 export function HeroSection() {
   return (
@@ -34,9 +36,10 @@ export function HeroSection() {
             <p className="mt-6 max-w-lg text-lg text-gray-600 dark:text-gray-300">
               The complete B2B automation platform built specifically for
               Pakistani traders and distributors. Manage everything from one
-              powerful dashboard - CRM, invoices, inventory, and WhatsApp
+              powerful dashboard — CRM, invoices, inventory, and WhatsApp
               automation.
             </p>
+
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button size="lg" className="btn-gradient text-white shadow-lg">
                 Start Free 14-Day Trial
@@ -46,6 +49,34 @@ export function HeroSection() {
                 Schedule a Demo
               </Button>
             </div>
+
+            {/* Quick Highlights */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-md">
+              <div className="flex items-start gap-3 rounded-lg bg-white/70 p-3 shadow-sm backdrop-blur-sm dark:bg-gray-800/60">
+                <MessageSquare className="h-5 w-5 text-green-600 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-900 dark:text-white">
+                    WhatsApp Automation
+                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Send messages, invoices & updates directly from your dashboard.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 rounded-lg bg-white/70 p-3 shadow-sm backdrop-blur-sm dark:bg-gray-800/60">
+                <FileText className="h-5 w-5 text-indigo-600 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-gray-900 dark:text-white">
+                    Auto Data Fetch from PDF
+                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Upload invoices or bills — data is extracted automatically.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="mt-6 flex gap-6">
               <span className="flex items-center gap-1.5 text-sm text-gray-500">
                 <ShieldCheck className="h-4 w-4 text-green-500" />
@@ -60,7 +91,6 @@ export function HeroSection() {
 
           {/* Hero Image / Dashboard Mockup */}
           <div className="relative">
-            {/* Placeholder for the dashboard image */}
             <div className="relative rounded-2xl border border-gray-200 bg-white p-2 shadow-2xl dark:border-gray-800 dark:bg-gray-900">
               <div className="aspect-video w-full rounded-lg bg-gray-100 p-4 dark:bg-gray-800">
                 <div className="flex justify-between z-10">
@@ -75,7 +105,6 @@ export function HeroSection() {
                 </div>
 
                 <div className="mt-4 h-3/4 w-full rounded-md overflow-hidden bg-gray-200 dark:bg-gray-700 relative">
-                  {/* Actual dashboard image from assets */}
                   <Image
                     src={dashboardImg}
                     alt="Dashboard mockup"
@@ -86,7 +115,7 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Floating stat cards (from screenshot) */}
+            {/* Floating stat cards */}
             <div className="absolute -bottom-8 -right-8 rounded-lg border border-gray-200 bg-white/80 p-3 shadow-xl backdrop-blur-sm dark:border-gray-700 dark:bg-gray-800/80">
               <p className="text-xs text-gray-500">Time Saved/Week</p>
               <p className="text-lg font-bold text-gray-900 dark:text-white">
