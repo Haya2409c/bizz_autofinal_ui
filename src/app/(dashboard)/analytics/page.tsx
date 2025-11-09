@@ -200,21 +200,22 @@ export default function AnalyticsPage() {
           </div>
 
           {/* Tabs */}
-          <div className="flex flex-wrap gap-2 sm:gap-4 mb-6 overflow-x-auto">
-            {["Revenue", "Clients", "Products", "Messages"].map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 rounded-full shadow text-sm font-medium ${
-                  activeTab === tab
-                    ? "bg-blue-600 text-primary-foreground border-primary"
-                    : "bg-card text-foreground hover:bg-muted"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
+<div className="flex gap-2 sm:gap-4 mb-6 w-full overflow-x-auto whitespace-nowrap no-scrollbar">
+  {["Revenue", "Clients", "Products", "Messages"].map((tab) => (
+    <button
+      key={tab}
+      onClick={() => setActiveTab(tab)}
+      className={`px-4 py-2 rounded-full shadow text-sm font-medium flex-shrink-0 ${
+        activeTab === tab
+          ? "bg-blue-600 text-white border border-blue-600"
+          : "bg-white text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+      }`}
+    >
+      {tab}
+    </button>
+  ))}
+</div>
+
 
           {/* ==================== TAB CONTENT ==================== */}
 

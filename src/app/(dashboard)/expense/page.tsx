@@ -52,7 +52,7 @@ const DailyExpensesLayout: React.FC = () => {
     </div>
   </div>
 
-<div className="flex items-center gap-0 ml-1 mr-8 pr-2 flex-shrink-0">
+<div className="flex items-center gap-0 ml-1 mr-2 pr-2 flex-shrink-0">
 
   <Button
     variant="ghost"
@@ -80,7 +80,7 @@ const DailyExpensesLayout: React.FC = () => {
     ) : null}
   </Button>
 
-  <Avatar className="flex-shrink-0 h-7 w-7 sm:h-10 sm:w-10 cursor-pointer hover:scale-105 transition-transform duration-200 ml-0 mr-9 rounded-full overflow-hidden">
+  <Avatar className="flex-shrink-0 h-7 w-7 sm:h-10 sm:w-10 cursor-pointer hover:scale-105 transition-transform duration-200 ml-0 rounded-full overflow-hidden">
     <AvatarFallback className="bg-primary text-primary-foreground text-[13px]">
       M
     </AvatarFallback>
