@@ -31,14 +31,14 @@ const Contact = () => {
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Let's Start a{" "}
+            Let&apos;s Start a{" "}
 <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-700 bg-clip-text text-transparent">
   Conversation
 </span>
 
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Have questions? We'd love to hear from you. Our team is here to help you transform
+            Have questions? We&apos;d love to hear from you. Our team is here to help you transform
             your business.
           </p>
         </div>
@@ -95,7 +95,7 @@ const Contact = () => {
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold mb-2">Send us a Message</h2>
                 <p className="text-muted-foreground mb-6">
-                  Fill out the form below and we'll get back to you within 24 hours
+                  Fill out the form below and we&apos;ll get back to you within 24 hours
                 </p>
                 
                 <form className="space-y-6">

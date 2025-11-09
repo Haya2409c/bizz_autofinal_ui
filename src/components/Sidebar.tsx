@@ -14,6 +14,8 @@ import {
   BarChart3,
   Settings,
   LogOut,
+  Wallet,
+  Receipt,
 } from "lucide-react";
 
 const menuItems = [
@@ -21,6 +23,7 @@ const menuItems = [
   { name: "CRM", icon: Users, path: "/crm" },
   { name: "Invoices", icon: FileText, path: "/invoices" },
   { name: "Inventory", icon: Package, path: "/inventory" },
+  { name: "Expense", icon: Receipt, path: "/expense" },
   { name: "WhatsApp", icon: MessageSquare, path: "/whatsapp" },
   { name: "Analytics", icon: BarChart3, path: "/analytics" },
   { name: "Settings", icon: Settings, path: "/settings" },

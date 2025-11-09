@@ -159,20 +159,24 @@ const Pricing = () => {
                 Monthly
               </button>
               <button
-                onClick={() => setIsAnnual(true)}
-                className={`px-6 py-2 rounded-full font-medium transition-colors relative ${
-                  isAnnual
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
-                }`}
-              >
-                Annual
-                {isAnnual && (
-                  <span className="absolute -top-3 -right-2 bg-success text-white text-xs px-2 py-1 rounded-full">
-                    Save 20%
-                  </span>
-                )}
-              </button>
+  onClick={() => setIsAnnual(true)}
+  className={`px-6 py-2 rounded-full font-medium transition-colors relative overflow-visible ${
+    isAnnual
+      ? "bg-primary text-primary-foreground"
+      : "bg-muted text-muted-foreground hover:bg-muted/80"
+  }`}
+>
+  Annual
+  {isAnnual && (
+    <span
+      aria-hidden="true"
+      className="absolute -top-2 right-0 translate-x-1/4 z-20 bg-gradient-to-r from-black-100 to-emerald-900 text-white text-xs px-3 py-1 rounded-full shadow-md ring-1 ring-white/25 font-semibold pointer-events-none whitespace-nowrap"
+    >
+      Save 20%
+    </span>
+  )}
+</button>
+
             </div>
           </div>
         </section>

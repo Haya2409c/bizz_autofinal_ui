@@ -9,7 +9,7 @@ import {
   Phone,
 } from "lucide-react";
 import { Sparkles } from "lucide-react";
-import { useEffect, useState } from "react"; // 
+import { useState } from "react";
 const socialLinks = [
   { icon: Facebook, href: "#" },
   { icon: Twitter, href: "#" },
@@ -137,11 +137,7 @@ export function Footer() {
   );
 }
 function FooterYear() {
-  const [year, setYear] = useState<number | null>(null);
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
+  const [year] = useState<number>(() => new Date().getFullYear());
 
   return (
     <p className="text-sm text-blue-700 dark:text-blue-400">
